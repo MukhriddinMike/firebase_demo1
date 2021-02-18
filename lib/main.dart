@@ -1,7 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_demo/screens/welcome_main.dart';
+import 'package:firebase_demo/services/login_in.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -27,8 +26,6 @@ class Homepage extends StatefulWidget {
   _HomepageState createState() => _HomepageState();
 }
 
-final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
-final GoogleSignIn googleSignIn = GoogleSignIn();
 Color primaryColor = Color(0xFF001247);
 
 class _HomepageState extends State<Homepage> {
@@ -38,10 +35,10 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Firebase SignIn'),
+        title: Text('Azan Korea'),
         backgroundColor: Colors.transparent,
       ),
-      body: Login(),
+      body: Welcome(),
       backgroundColor: primaryColor,
     );
   }

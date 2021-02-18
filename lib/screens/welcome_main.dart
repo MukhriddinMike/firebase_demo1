@@ -1,14 +1,15 @@
+import 'package:firebase_demo/services/login_in.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class Login extends StatefulWidget {
-  Login({Key key}) : super(key: key);
+class Welcome extends StatefulWidget {
+  Welcome({Key key}) : super(key: key);
 
   @override
-  _LoginState createState() => _LoginState();
+  _WelcomeState createState() => _WelcomeState();
 }
 
-class _LoginState extends State<Login> {
+class _WelcomeState extends State<Welcome> {
   Color primaryColor = Color(0xFF457EAC);
   Color secondaryColor = Color(0xFF309975);
   Color logoColor = Color(0xFF809fff);
@@ -48,7 +49,10 @@ class _LoginState extends State<Login> {
           elevation: 0,
           height: 50,
           onPressed: () {
-            //Navigator.pop(context, MaterialPageRoute(builder: (_) {}));
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => LoginScreen()),
+            );
           },
           color: logoColor,
           child: Row(
@@ -58,7 +62,16 @@ class _LoginState extends State<Login> {
                 'Get Started Bismillah',
                 style: TextStyle(color: Colors.white, fontSize: 20),
               ),
-              Icon(FontAwesomeIcons.arrowRight)
+              Icon(
+                Icons.navigate_next,
+                size: 30,
+                color: Colors.white,
+              ),
+              Icon(
+                Icons.navigate_next,
+                size: 30,
+                color: Colors.white,
+              ),
             ],
           ),
         ),
