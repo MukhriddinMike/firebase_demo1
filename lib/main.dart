@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_demo/screens/loginIn.dart';
+import 'package:firebase_demo/screens/welcome_main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark(),
+      debugShowCheckedModeBanner: false,
+      //theme: ThemeData.dark(),
       home: Homepage(),
     );
   }
@@ -28,6 +29,7 @@ class Homepage extends StatefulWidget {
 
 final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
+Color primaryColor = Color(0xFF001247);
 
 class _HomepageState extends State<Homepage> {
   //TextEditingController _signInWithGoogle = TextEditingController();
@@ -37,8 +39,10 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Firebase SignIn'),
+        backgroundColor: Colors.transparent,
       ),
       body: Login(),
+      backgroundColor: primaryColor,
     );
   }
 

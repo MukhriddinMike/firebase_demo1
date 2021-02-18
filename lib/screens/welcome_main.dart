@@ -11,16 +11,19 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   Color primaryColor = Color(0xFF457EAC);
   Color secondaryColor = Color(0xFF309975);
-  Color logoColor = Color(0xFFdad873);
+  Color logoColor = Color(0xFF809fff);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Image.asset(
-          'assets/muslimboy.jpg',
-          height: 250,
+        CircleAvatar(
+          radius: 100.0,
+          //backgroundColor: Colors.blue,
+          backgroundImage: AssetImage(
+            'assets/muslimboy.jpg',
+          ),
         ),
         SizedBox(
           height: 20,
@@ -48,43 +51,16 @@ class _LoginState extends State<Login> {
             //Navigator.pop(context, MaterialPageRoute(builder: (_) {}));
           },
           color: logoColor,
-          child: Text(
-            'Login',
-            style: TextStyle(color: Colors.white, fontSize: 16.0),
-          ),
-          //textColor: Colors.white,
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        MaterialButton(
-          elevation: 0,
-          minWidth: double.maxFinite,
-          height: 50,
-          onPressed: () {
-            //google Sign
-          },
-          color: Colors.blue,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Icon(FontAwesomeIcons.google),
-              SizedBox(
-                width: 10,
-              ),
               Text(
-                'Sign-in using Google',
-                style: TextStyle(color: Colors.white, fontSize: 16.0),
+                'Get Started Bismillah',
+                style: TextStyle(color: Colors.white, fontSize: 20),
               ),
+              Icon(FontAwesomeIcons.arrowRight)
             ],
           ),
-          textColor: Colors.white,
-        ),
-        SizedBox(
-          height: 100,
-        ),
-        Align(
-          alignment: Alignment.bottomCenter,
         ),
       ],
     );
