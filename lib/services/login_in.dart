@@ -30,58 +30,60 @@ class LoginScreen extends StatelessWidget {
           elevation: 0,
         ),
         backgroundColor: primaryColor,
-        body: Container(
-          alignment: Alignment.topCenter,
-          margin: EdgeInsets.symmetric(horizontal: 30),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'Assalamu Aleykum Welcome to Masjid Prayer Times',
-                  textAlign: TextAlign.center,
-                  style:
-                      GoogleFonts.openSans(color: Colors.white, fontSize: 28),
-                ),
-                SizedBox(
-                  height: 50,
-                ),
-                MyTextField(
-                  controller: nameController,
-                  icon: FontAwesomeIcons.userAlt,
-                  labaltext: 'Username',
-                  obscure: false,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                MyTextField(
-                  controller: passwordController,
-                  icon: FontAwesomeIcons.lock,
-                  labaltext: 'Password',
-                  obscure: true,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                MaterialButton(
-                  onPressed: () {},
-                  elevation: 0,
-                  minWidth: double.maxFinite,
-                  height: 50,
-                  color: logoColor,
-                  child: Text(
-                    'Sign-In',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+        body: SafeArea(
+          child: Container(
+            alignment: Alignment.topCenter,
+            margin: EdgeInsets.symmetric(horizontal: 45),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'Assalamu Aleykum Welcome to Masjid Prayer Times',
+                    textAlign: TextAlign.center,
+                    style:
+                        GoogleFonts.openSans(color: Colors.white, fontSize: 28),
                   ),
-                  textColor: Colors.white,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Foot(),
-              ],
+                  SizedBox(
+                    height: 50,
+                  ),
+                  MyTextField(
+                    controller: nameController,
+                    icon: FontAwesomeIcons.userAlt,
+                    labaltext: 'Username',
+                    obscure: false,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  MyTextField(
+                    controller: passwordController,
+                    icon: FontAwesomeIcons.lock,
+                    labaltext: 'Password',
+                    obscure: true,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  MaterialButton(
+                    onPressed: () {},
+                    elevation: 0,
+                    minWidth: double.maxFinite,
+                    height: 50,
+                    color: logoColor,
+                    child: Text(
+                      'Sign-In',
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                    textColor: Colors.white,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Foot(),
+                ],
+              ),
             ),
           ),
         ),
